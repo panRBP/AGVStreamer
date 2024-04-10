@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stream Okna</title>
+</head>
+<body>
+    <img id="streamedImage" src="/api/Stream" alt="Strumieniowany obraz">
+
+    <script>
+        function refreshImage() {
+            const image = document.getElementById('streamedImage');
+            // Dodajemy znacznik czasu jako parametr query, aby uniknąć cache'owania obrazu przez przeglądarkę.
+            image.src = '/api/Stream?' + new Date().getTime();
+        }
+
+        // Ustaw odświeżanie obrazu co 1 sekundę (1000 milisekund).
+        setInterval(refreshImage, 1000);
+    </script>
+</body>
+</html>
